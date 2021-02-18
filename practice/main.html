@@ -1,0 +1,71 @@
+<P id="demo"></P>
+
+<script>
+var name, roll, age , address; 
+
+class Color {
+  constructor(age)  {
+    this.age = age;
+    alert("age"+this.age);
+  }
+  print() {
+    return "see the age " +this.age;
+  }
+
+  get stuage() {
+    return this.age;
+  }
+  set stuage(x) {
+    this.age = x;
+  }
+
+  static hello() { 
+    alert("hello");
+  }
+
+}
+
+class Student extends Color { 
+  constructor(name , roll ,  age , address) {
+  super(age);
+  this.name= name;
+  this.roll = roll;  
+  this.address = address;
+  }  
+
+  display() {
+    alert(this.print() +" "+this.name + " " + this.address);
+  }
+
+  get stuname() {
+    return this.name;
+  }
+  set stuname(x) {
+    this.name = x;
+  }
+
+  get stuaddress() {
+    return this.address;
+  }
+  set stuaddress(x) {
+    this.address = x;
+  }
+
+
+}
+
+
+let obj = new Student("Ashif", "12", "24", "paik para");
+obj.display();
+
+obj.stuname = "Aminul Islam";
+obj.stuaddress = "Barisal";
+obj.stuage = 55;
+
+alert(obj.stuname);
+alert(obj.stuaddress);
+obj.display();
+alert(obj.stuage);
+alert(Student.hello());
+
+</script>

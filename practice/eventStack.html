@@ -1,0 +1,36 @@
+<html>
+  <body>
+    <script>
+      
+
+      function secondCall() {
+        console.log("in secondCall");
+      }
+
+      function firstCall() {
+        secondCall();
+        console.log("in firstCall");
+      }
+
+      function main() {
+        firstCall();
+        console.log("in main");
+      }
+
+      main();
+
+      setTimeout(func, 3000);
+      view();
+
+      function view() { 
+        alert("view");
+      }
+
+
+      function func() { 
+        alert("Hello");
+      }
+
+    </script>
+  </body>
+</html>

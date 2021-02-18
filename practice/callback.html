@@ -1,0 +1,49 @@
+<html>
+  <body>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <script>
+      var val1, val2, val3, summation;
+
+      function sendData2() {
+        document.getElementById("demo2").innerHTML = "dsdd";
+      }
+
+      function sendData(data, myFirstCallBack2) {
+        document.getElementById("demo").innerHTML = data;
+        myFirstCallBack2();
+      }
+
+      function add(val1, val2, val3, myFirstCallBack, myFirstCallBack2) {
+        summation = val1 + val2 + val3;
+        alert(summation);
+        myFirstCallBack(summation, myFirstCallBack2);
+        /// myFirstCallBack();
+      }
+      add(4, 5, 6, sendData, sendData2);
+    </script>
+
+    <script>
+      function function1(call_2, call_3) {
+        alert("function 1");
+        call_2(call_3);
+      }
+
+      function function2(call_3) {
+        alert("function 2");
+        call_3();
+      }
+
+      function function3() {
+        alert("function 3");
+      }
+
+      function findCalback(call_1, call_2, call_3) {
+        alert("findCalback working");
+        call_1(call_2, call_3);
+      }
+
+      findCalback(function1, function2, function3);
+    </script>
+  </body>
+</html>
